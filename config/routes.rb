@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root 'apartments#index' #add this line
+
   resources :apartments do
     # /GET /apartments/:apartment_id/map_locations
     get 'map_location'        # Add this and the "do" "end"
   end
-  root 'apartments#index' #add this line
     # get 'apartments/index/:params'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

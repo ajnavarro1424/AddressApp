@@ -3,12 +3,12 @@
 <%= link_to image_tag(@apartment.image.url(:med)), @apartment.image.url %>
 
 <p>
-  <strong>Address1:</strong>
+  <strong>Address 1:</strong>
   <%= @apartment.address1 %>
 </p>
 
 <p>
-  <strong>Address2:</strong>
+  <strong>Address 2:</strong>
   <%= @apartment.address2 %>
 </p>
 
@@ -45,6 +45,16 @@
 <p>
   <strong>Hours:</strong>
   <%= @apartment.hours %>
+</p>
+
+<p>
+  <strong>Apt. ID:</strong>
+  <%= @apartment.id %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= current_user.email %>
 </p>
 
 <div id="apartment_map" data-apartment-id="<%=@apartment.id%>">Google Map will appear here...</div>
