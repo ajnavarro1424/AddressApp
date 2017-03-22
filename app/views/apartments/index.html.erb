@@ -1,6 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Apartments</h1>
+<h2>
+  <form action="/apartments" method="get">
+    <input type="text" name="search" placeholder="Search Apartments">
+    <input type="submit" name="" value="Search">
+</form>
+</h2>
+
+<% if @results.present? %>
+<p>
+<table>
+  <% @results.each do |result| %>
+  <tr>
+    <td><%= result.address1 %></td>
+    <td><%= result.address2 %></td>
+    <td><%= result.city %></td>
+    <td><%= result.zip %></td>
+    <td><%= result.state %></td>
+    <td><%= result.country %></td>
+    <td><%= result.name %></td>
+  </tr>
+  <% end %>
+</table>
+</p>
+<% end %>
+
+<br>
+<br>
 
 <table>
   <thead>
@@ -16,6 +43,7 @@
       <th>Hours</th>
       <th>Latitude</th>
       <th>Longitude</th>
+      <th>Picture</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -34,6 +62,7 @@
         <td><%= apartment.hours %></td>
         <td><%= apartment.latitude %></td>
         <td><%= apartment.longitude %></td>
+        <td><%= link_to image_tag(apartment.image.url(:small)), apartment.image.url %></td>
         <td><%= link_to 'Show', apartment %></td>
         <td><%= link_to 'Edit', edit_apartment_path(apartment) %></td>
         <td><%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %></td>

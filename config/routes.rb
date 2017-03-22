@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get 'map_location'        # Add this and the "do" "end"
   end
   root 'apartments#index' #add this line
+    # get 'apartments/index/:params'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

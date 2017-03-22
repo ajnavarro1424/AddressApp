@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to image_tag(@apartment.image.url(:med)), @apartment.image.url %>
+
 <p>
   <strong>Address1:</strong>
   <%= @apartment.address1 %>
