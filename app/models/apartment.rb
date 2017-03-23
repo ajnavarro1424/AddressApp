@@ -6,7 +6,7 @@ class Apartment < ActiveRecord::Base
   validates_attachment :image, presence: true,
     content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
     size: { in: 0..10.megabytes }
-
+  resourcify
 
   def full_address
     "#{self.address1}, #{self.address2}, #{self.city}, #{self.state}, #{self.zip}, #{self.country}"

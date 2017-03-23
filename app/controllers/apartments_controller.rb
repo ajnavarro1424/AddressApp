@@ -1,11 +1,15 @@
 class ApartmentsController < ApplicationController
   before_action :set_apartment, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user! #add this line
+  before_action :authenticate_user!, except: [:index] #add this line
+  load_and_authorize_resource   # add this line
+
 
   # GET /apartments
   # GET /apartments.json
   def index
     @apartments = Apartment.all
+    @ability = Ability.new(current_user)
+
     if params[:search].present?
       @results = Apartment.fuzzy_search(address1: params[:search])
     end
