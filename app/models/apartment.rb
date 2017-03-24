@@ -5,7 +5,7 @@ class Apartment < ActiveRecord::Base
   has_attached_file :image, styles: { small: "75x75", med: "300x300", large: "600x600" }
   validates_attachment :image, presence: true,
     content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
-    size: { in: 0..10.megabytes }, :url => ':s3_domain_url', :path => '/:class/:attachment/:id_partition/:style/:filename'  
+    size: { in: 0..10.megabytes }, :s3_host_name => 's3-us-west-1.amazonaws.com', :path => '/:class/:attachment/:id_partition/:style/:filename'  
   resourcify
 
   def full_address
