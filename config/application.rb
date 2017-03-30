@@ -31,5 +31,11 @@ module AddressApp
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_host_name => 's3-us-west-1.amazonaws.com'
+    }
+
   end
 end
