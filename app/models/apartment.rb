@@ -8,9 +8,9 @@ class Apartment < ActiveRecord::Base
     content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
     size: { in: 0..10.megabytes },
     :storage => :s3,
-    :s3_host_name => 's3-us-west-1.amazonaws.com'
-    :bucket => 'apartmentapp032417',
-     :s3_credentials => S3_CREDENTIALS,
+    :s3_host_name => 's3-us-west-1.amazonaws.com',
+    :bucket =>'apartmentapp032417',
+    :s3_credentials => S3_CREDENTIALS,
         :url => "/:image/:id/:style/:basename.:extension",
         :path => ":image/:id/:style/:basename.:extension"
 
