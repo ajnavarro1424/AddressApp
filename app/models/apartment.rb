@@ -9,11 +9,11 @@ class Apartment < ActiveRecord::Base
     size: { in: 0..10.megabytes },
     :storage => :s3,
     :s3_host_name => 's3-us-west-1.amazonaws.com'
-    :s3_credentials => {
-        :bucket => ENV['apartmentapp032417'],
-        :access_key_id => ENV['AKIAI4QKXHSN2QJRTWOA'],
-        :secret_access_key => ENV['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']
-      }
+    :bucket => 'apartmentapp032417',
+     :s3_credentials => S3_CREDENTIALS,
+        :url => "/:image/:id/:style/:basename.:extension",
+        :path => ":image/:id/:style/:basename.:extension"
+
 
   resourcify
 
