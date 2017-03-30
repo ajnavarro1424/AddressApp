@@ -11,7 +11,7 @@ class Apartment < ActiveRecord::Base
     :s3_host_name => 's3-us-west-1.amazonaws.com',
     :bucket =>'apartmentapp032417',
     :s3_credentials =>{
-          :bucket => ENV['apartmentapp032417'],
+          :bucket => ENV['apartmentapp032417.herokuapp.com'],
           :access_key_id => ENV['AKIAI4QKXHSN2QJRTWOA'],
           :secret_access_key => ENV['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']},
     :url => "/:image/:id/:style/:basename.:extension",
