@@ -13,6 +13,7 @@ class Apartment < ActiveRecord::Base
         :bucket => ENV['apartmentapp032417'],
         :access_key_id => ENV['AKIAI4QKXHSN2QJRTWOA'],
         :secret_access_key => ENV['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']
+      }
 
   resourcify
 
