@@ -13,8 +13,7 @@ class Apartment < ActiveRecord::Base
           :bucket => ENV['apartmentapp032417.herokuapp.com'],
           :access_key_id => ENV['AKIAI4QKXHSN2QJRTWOA'],
           :secret_access_key => ENV['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']},
-    :url => "/:image/:id/:style/:basename.:extension",
-    :path => ":image/:id/:style/:basename.:extension"
+    :path => '/:class/:attachment/:id_partition/:style/:filename',  
 
 
   resourcify
